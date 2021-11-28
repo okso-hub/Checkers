@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Main
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=num\ direction
+comment2.target=void\ moveWhite(int,\ int)
+comment3.params=num\ direction
+comment3.target=void\ moveBlack(int,\ int)
+numComments=4

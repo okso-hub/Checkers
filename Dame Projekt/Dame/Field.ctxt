@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Field()
+comment0.text=\r\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\r\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\r\n
+comment1.params=
+comment1.target=java.awt.Shape\ gibAktuelleFigur()
+comment1.text=\r\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\r\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ \u00FCber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \r\n\ \ auf\ public\ gesetzt\ werden.\ ]\r\n
+numComments=2
