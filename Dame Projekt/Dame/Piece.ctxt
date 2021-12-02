@@ -1,14 +1,12 @@
 #BlueJ class context
-comment0.target=Piece
-comment0.text=\n\ Ein\ Piece,\ der\ manipuliert\ werden\ kann\ und\ sich\ selbst\ auf\ einer\ Leinwand\ zeichnet.\n\ \n\ @author\ Claus\ Albowski\n\ @version\ 2.2\ \ (aug\ 07)\n
-comment1.params=isWhite
-comment1.target=Piece(boolean)
-comment1.text=\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\n
-comment2.params=newPos
-comment2.target=void\ movePiece(int[])
+comment0.params=isWhite
+comment0.target=Piece(boolean)
+comment0.text=\r\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\r\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\r\n
+comment1.params=newPos
+comment1.target=void\ movePiece(int[])
+comment2.params=
+comment2.target=void\ resetNewPiece()
 comment3.params=
-comment3.target=void\ resetNewPiece()
-comment4.params=
-comment4.target=java.awt.Shape\ gibAktuelleFigur()
-comment4.text=\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ \u00FCber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \n\ \ auf\ public\ gesetzt\ werden.\ ]\n
-numComments=5
+comment3.target=java.awt.Shape\ gibAktuelleFigur()
+comment3.text=\r\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\r\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ \u00FCber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \r\n\ \ auf\ public\ gesetzt\ werden.\ ]\r\n
+numComments=4

@@ -19,6 +19,14 @@ public class Main
         bPieces.zeige();
         
         field.zeige();
+        
+        for (int i = 0; i < Stein.piecePositions.length; i++) {
+            for (int j = 0; j < Stein.piecePositions.length; j++) {
+                Stein.piecePositions[i][j] = bPieces.getPiecePosition()[i][j] + wPieces.getPiecePosition()[i][j];
+            }
+        }
+        System.out.println(Stein.piecePositions);
+        // Stein.piecePositions = bPieces.getPiecePosition() + wPieces.getPiecePosition();
     }
     
     public static void moveWhite(int num, int direction)
@@ -30,5 +38,9 @@ public class Main
     {
         bPieces.moveBlack(num, direction);
     }
-
+    
+    public static void updateArrayPosition()
+    {
+        // leer
+    }
 }

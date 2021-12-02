@@ -22,6 +22,7 @@ public abstract class Stein
     protected int[] gridPos = new int[2];
     
     protected boolean[][] isFree = new boolean[8][8];
+    public static int[][] piecePositions = new int[8][8];
     
     protected void move(boolean isLeft)
     {
@@ -43,6 +44,21 @@ public abstract class Stein
         // !!!
     }
     
+    public static int[][] returnPiecePositions()
+    {
+        return piecePositions;
+    }
+    
+    public boolean[][] updateBoolean() {
+        
+        for (int i = 0; i < piecePositions.length; i++) {
+            for (int j = 0; j < isFree.length; j++) {
+                isFree[i][j] = false;
+            }
+        }
+        
+        return isFree;
+    }
     // komische methoden
     
     protected abstract Shape gibAktuelleFigur();
