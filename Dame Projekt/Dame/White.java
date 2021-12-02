@@ -20,8 +20,14 @@ public class White extends Sides {
     
     public void moveWhite(int pieceNum, int direction) {
         loesche();
-        pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] + 1});
-        
+        if(!piece[piecenum].checkKill() && !piece[pieceNum].checkField(new int[]{}))
+        {
+            pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] + 1});
+        } 
+         else if(piece[pieceNum].checkKill())
+        {
+            System.out.println("hey na you can killing now!!!!!!!");
+        }
         zeichne();
     }
     

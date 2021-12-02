@@ -12,7 +12,7 @@ import java.awt.geom.Arc2D;
  */
 public abstract class Stein
 {
-    protected int breite = 30;
+    protected int breite = 30;     // hey wie gehts euch heute!!!!!!!!!!!!
     protected int tiefe = 30;
     protected String color;
     protected boolean istSichtbar;
@@ -41,7 +41,7 @@ public abstract class Stein
     
     protected void kill()
     {
-        // !!!
+        // kill ze figur !!!
     }
     
     public static int[][] returnPiecePositions()
@@ -56,6 +56,8 @@ public abstract class Stein
                 isFree[i][j] = false;
             }
         }
+        
+        
         
         return isFree;
     }

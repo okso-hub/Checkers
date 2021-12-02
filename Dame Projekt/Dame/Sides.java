@@ -63,4 +63,6 @@ public abstract class Sides extends Stein
         
         return posses;
     }
+    
+        
 }
