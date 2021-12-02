@@ -30,7 +30,7 @@ public abstract class Sides extends Stein
     protected void positionBlackPieces() {
         int p = 0;
         int right = 0;
-        for (int i = 5; i < 7; i++) {
+        for (int i = 5; i < 8; i++) {
             for (int j = 0; j < 4; j++) {
                 pieces[p].gridPos[0] = j*2 + right;
                 pieces[p].gridPos[1] = i;
@@ -42,5 +42,25 @@ public abstract class Sides extends Stein
             // if(right){pieces[p].gridPos[0]++;}
             right = (right == 0) ? 1 : 0;
         }
+    }
+    
+    protected boolean[][] returnBollheheh() {
+        return pieces[0].updateBoolean();
+    }
+    
+    protected int[][] getPiecePosition()
+    {
+        int[][] posses = new int[8][8];
+        
+        for (int i = 0; i < posses.length; i++) {
+            for(Piece piece : pieces) {
+                if (piece.gridPos[0] == i) {
+                    posses[piece.gridPos[0]][piece.gridPos[1]] = (color == "blau") ? 1 : 2;
+                    System.out.println("es klappt! " + piece.gridPos[0] + " " + piece.gridPos[1]);
+                }
+            }
+        }
+        
+        return posses;
     }
 }
