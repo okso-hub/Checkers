@@ -20,11 +20,7 @@ public class Main
         
         field.zeige();
         
-        for (int i = 0; i < Stein.piecePositions.length; i++) {
-            for (int j = 0; j < Stein.piecePositions.length; j++) {
-                Stein.piecePositions[i][j] = bPieces.getPiecePosition()[i][j] + wPieces.getPiecePosition()[i][j];
-            }
-        }
+        updatePiecePositions();
         System.out.println(Stein.piecePositions);
         // Stein.piecePositions = bPieces.getPiecePosition() + wPieces.getPiecePosition();
     }
@@ -42,5 +38,13 @@ public class Main
     public static void updateArrayPosition()
     {
         // leer
+    }
+    
+    public static void updatePiecePositions() {
+        for (int i = 0; i < Stein.piecePositions.length; i++) {
+            for (int j = 0; j < Stein.piecePositions.length; j++) {
+                Stein.piecePositions[i][j] = bPieces.getPiecePosition()[i][j] + wPieces.getPiecePosition()[i][j];
+            }
+        }
     }
 }

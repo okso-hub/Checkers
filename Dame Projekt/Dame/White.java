@@ -20,13 +20,17 @@ public class White extends Sides {
     
     public void moveWhite(int pieceNum, int direction) {
         loesche();
-        if(!piece[piecenum].checkKill() && !piece[pieceNum].checkField(new int[]{}))
+        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField(new int[]{}))
         {
+            System.out.println(String.valueOf(pieces[pieceNum].checkKill()) + " <---------- ist checkKill richtif???");
             pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] + 1});
+            Main.updatePiecePositions();
         } 
-         else if(piece[pieceNum].checkKill())
+         else if(pieces[pieceNum].checkKill())
         {
-            System.out.println("hey na you can killing now!!!!!!!");
+            pieces[pieceNum].checkKill();
+            Main.updatePiecePositions();
+            System.out.println("hey na you can kill now!!!!!!!");
         }
         zeichne();
     }

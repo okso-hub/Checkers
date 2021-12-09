@@ -7,4 +7,6 @@ comment2.params=num\ direction
 comment2.target=void\ moveBlack(int,\ int)
 comment3.params=
 comment3.target=void\ updateArrayPosition()
-numComments=4
+comment4.params=
+comment4.target=void\ updatePiecePositions()
+numComments=5

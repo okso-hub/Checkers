@@ -44,10 +44,6 @@ public abstract class Sides extends Stein
         }
     }
     
-    protected boolean[][] returnBollheheh() {
-        return pieces[0].updateBoolean();
-    }
-    
     protected int[][] getPiecePosition()
     {
         int[][] posses = new int[8][8];
@@ -56,7 +52,7 @@ public abstract class Sides extends Stein
             for(Piece piece : pieces) {
                 if (piece.gridPos[0] == i) {
                     posses[piece.gridPos[0]][piece.gridPos[1]] = (color == "blau") ? 1 : 2;
-                    System.out.println("es klappt! " + piece.gridPos[0] + " " + piece.gridPos[1]);
+//                     System.out.println("es klappt! " + piece.gridPos[0] + " " + piece.gridPos[1]);
                 }
             }
         }

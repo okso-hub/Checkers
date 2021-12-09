@@ -21,7 +21,7 @@ public class Black extends Sides {
     public void moveBlack(int pieceNum, int direction) {
         loesche();
         pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] - 1});
-        
+        Main.updatePiecePositions();
         zeichne();
     }
     
