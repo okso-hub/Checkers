@@ -25,6 +25,17 @@ public class Black extends Sides {
         zeichne();
     }
     
+    public void kill(int[] position) {
+        for (Piece piece : pieces) {
+            if (piece.gridPos[0] == position[0] && piece.gridPos[1] == position[1]) {
+                piece.die();
+                break;
+            }
+        }
+    }
+    
+    
+    
     public Shape gibAktuelleFigur()
     {
         piecesShape.reset();

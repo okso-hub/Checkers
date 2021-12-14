@@ -28,11 +28,28 @@ public class White extends Sides {
         } 
          else if(pieces[pieceNum].checkKill())
         {
-            pieces[pieceNum].checkKill();
             Main.updatePiecePositions();
-            System.out.println("hey na you can kill now!!!!!!!");
+            if (Stein.piecePositions[pieces[pieceNum].gridPos[0] - 1][pieces[pieceNum].gridPos[1] + 1] == 2)
+            {
+                Main.killBlackPiece(new int[]{pieces[pieceNum].gridPos[0] - 1, pieces[pieceNum].gridPos[1] + 1});
+                Main.updatePiecePositions();
+                System.out.println("Töten nach links unten");
+                
+                pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] + 2});
+                Main.updatePiecePositions();
+                
+            } else if (Stein.piecePositions[pieces[pieceNum].gridPos[0] + 1][pieces[pieceNum].gridPos[1] + 1] == 2) {
+                Main.killBlackPiece(new int[]{pieces[pieceNum].gridPos[0] + 1, pieces[pieceNum].gridPos[1] + 1});
+                Main.updatePiecePositions();
+                System.out.println("Töten nach rechts unten");
+            }
         }
         zeichne();
+    }
+    
+    public boolean debug()
+    {
+        return pieces[9].checkKill();
     }
     
     public Shape gibAktuelleFigur()

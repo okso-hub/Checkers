@@ -30,6 +30,11 @@ public class Main
         wPieces.moveWhite(num, direction);
     }
     
+    public static boolean debug()
+    {
+         return wPieces.debug();
+    }
+    
     public static void moveBlack(int num, int direction)
     {
         bPieces.moveBlack(num, direction);
@@ -38,6 +43,15 @@ public class Main
     public static void updateArrayPosition()
     {
         // leer
+    }
+    
+    public static void killOne()
+    {
+// //         bPieces.kill(new int[]^^^^^^^^^^^^^^^^^^^^)
+    }
+    
+    public static void killBlackPiece(int[] position) {
+        bPieces.kill(position);
     }
     
     public static void updatePiecePositions() {

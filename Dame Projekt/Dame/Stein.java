@@ -12,12 +12,12 @@ import java.awt.geom.Arc2D;
  */
 public abstract class Stein
 {
-    protected int breite = 30;     // hey wie gehts euch heute!!!!!!!!!!!!
+    protected int breite = 30;     
     protected int tiefe = 30;
     protected String color;
     protected boolean istSichtbar;
-//     protected int xPos;
-//     protected int yPos;
+    protected boolean isDead = false;
+    
     protected int[] pos = new int[2];
     protected int[] gridPos = new int[2];
     
@@ -31,7 +31,8 @@ public abstract class Stein
     
     protected void die()
     {
-        // !!!
+        isDead = true;
+        loesche();
     }
     
     protected void turnQueen()
