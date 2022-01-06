@@ -7,7 +7,7 @@ import java.awt.geom.Arc2D;
 /**
  * Abstrakte Klasse Stein - beschreiben Sie hier die Klasse
  * 
- * @author (Ihr Name)
+ * @author Hey! :)
  * @version (eine Version-Nummer oder ein Datum)
  */
 public abstract class Stein
@@ -32,7 +32,7 @@ public abstract class Stein
     protected void die()
     {
         isDead = true;
-        loesche();
+        this.loesche();
     }
     
     protected void turnQueen()
@@ -42,7 +42,7 @@ public abstract class Stein
     
     protected void kill()
     {
-        // kill ze figur !!!
+        // leer
     }
     
     public static int[][] returnPiecePositions()
