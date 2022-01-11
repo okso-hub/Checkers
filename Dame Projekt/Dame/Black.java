@@ -26,9 +26,14 @@ public class Black extends Sides {
     }
     
     public void kill(int[] position) {
+        System.out.println("Methode wird ausgefuehrt");
         for (Piece piece : pieces) {
+            System.out.println(piece.gridPos[0] + " " + piece.gridPos[1]);
+            System.out.println(position[0] + " " + position[1]);
+            System.out.println("---------------------------");
             if (piece.gridPos[0] == position[0] && piece.gridPos[1] == position[1]) {
                 piece.die();
+                System.out.println("Figur isDead");
                 break;
             }
         }
@@ -42,7 +47,9 @@ public class Black extends Sides {
         for(Piece piece : pieces)
         {
             piece.resetNewPiece();
-            piecesShape.append(piece.gibAktuelleFigur(), false);
+            if (!piece.isDead) {
+                piecesShape.append(piece.gibAktuelleFigur(), false);
+            }
         }
         return transform(piecesShape);
     }

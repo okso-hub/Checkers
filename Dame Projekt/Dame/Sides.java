@@ -51,7 +51,8 @@ public abstract class Sides extends Stein
         for (int i = 0; i < posses.length; i++) {
             for(Piece piece : pieces) {
                 if (piece.gridPos[0] == i) { 
-                    if(!isDead)
+                    // System.out.println("Is dead? --> " + isDead);
+                    if(!piece.isDead)
                     {
                        posses[piece.gridPos[0]][piece.gridPos[1]] = (color == "blau") ? 1 : 2; 
                     }               

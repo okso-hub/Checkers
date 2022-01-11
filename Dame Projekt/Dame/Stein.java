@@ -32,7 +32,12 @@ public abstract class Stein
     protected void die()
     {
         isDead = true;
-        this.loesche();
+        System.out.println("die() wird gecalled");
+        System.out.println(istSichtbar);
+        this.zeige();
+        this.verberge();
+        Main.updatePiecePositions();
+        Main.updateScreen();
     }
     
     protected void turnQueen()

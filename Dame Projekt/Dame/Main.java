@@ -30,11 +30,11 @@ public class Main
         wPieces.moveWhite(num, direction);
     }
     
-    public static boolean debug()
-    {
-         return wPieces.debug();
-    }
-    
+//     public static boolean debug()
+//     {
+//          return wPieces.debug();
+//     }
+//     
     public static void moveBlack(int num, int direction)
     {
         bPieces.moveBlack(num, direction);
@@ -45,12 +45,26 @@ public class Main
         // leer
     }
     
+    public static void updateScreen()
+    {
+        bPieces.loesche();
+        bPieces.zeichne();
+        
+        wPieces.loesche();
+        wPieces.zeichne();
+    }
+    
     public static void killOne()
     {
 // //         bPieces.kill(new int[]^^^^^^^^^^^^^^^^^^^^)
     }
     
+    public static void returnDead() {
+        bPieces.getPiecePosition();
+    }
+    
     public static void killBlackPiece(int[] position) {
+        System.out.println("killBlackPiece wird gecalled");
         bPieces.kill(position);
     }
     
