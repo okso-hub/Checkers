@@ -12,35 +12,47 @@ public class Black extends Sides {
     public Black() {
         for(int i = 0; i < pieces.length; i++)
         {
-            pieces[i] = new Piece(true);
+            pieces[i] = new Piece(false);
         }
         
         color = "rot";
     }
     
     public void moveBlack(int pieceNum, int direction) {
-        loesche();
-        pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] - 1});
+
+        
         Main.updatePiecePositions();
-        zeichne();
-    }
-    
-    public void kill(int[] position) {
-        System.out.println("Methode wird ausgefuehrt");
-        for (Piece piece : pieces) {
-            System.out.println(piece.gridPos[0] + " " + piece.gridPos[1]);
-            System.out.println(position[0] + " " + position[1]);
-            System.out.println("---------------------------");
-            if (piece.gridPos[0] == position[0] && piece.gridPos[1] == position[1]) {
-                piece.die();
-                System.out.println("Figur isDead");
-                break;
+        
+        
+        /* ------------------------------------------------- */
+        
+        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField(new int[]{}))
+        {
+            System.out.println(String.valueOf(pieces[pieceNum].checkKill()) + " <---------- ist checkKill richtif???");
+            pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] - 1});
+            Main.updatePiecePositions();
+        } 
+         else if(pieces[pieceNum].checkKill())
+        {
+            Main.updatePiecePositions();
+            if (Stein.piecePositions[pieces[pieceNum].gridPos[0] - 1][pieces[pieceNum].gridPos[1] - 1] == 1)
+            {
+                Main.killWhitePiece(new int[]{pieces[pieceNum].gridPos[0] - 1, pieces[pieceNum].gridPos[1] + 1});
+                Main.updatePiecePositions();
+                System.out.println("Töten nach links oben");
+                
+                pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] - 2});
+                Main.updatePiecePositions();
+                
+            } else if (Stein.piecePositions[pieces[pieceNum].gridPos[0] + 1][pieces[pieceNum].gridPos[1] - 1] == 1) {
+                Main.killWhitePiece(new int[]{pieces[pieceNum].gridPos[0] + 1, pieces[pieceNum].gridPos[1] - 1});
+                Main.updatePiecePositions();
+                System.out.println("Töten nach rechts oben");
             }
         }
+        Main.updateScreen();
     }
-    
-    
-    
+      
     public Shape gibAktuelleFigur()
     {
         piecesShape.reset();

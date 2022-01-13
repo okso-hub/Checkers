@@ -19,7 +19,7 @@ public class White extends Sides {
     
     
     public void moveWhite(int pieceNum, int direction) {
-        loesche();
+        
         if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField(new int[]{}))
         {
             System.out.println(String.valueOf(pieces[pieceNum].checkKill()) + " <---------- ist checkKill richtif???");
@@ -44,7 +44,7 @@ public class White extends Sides {
                 System.out.println("Töten nach rechts unten");
             }
         }
-        zeichne();
+        Main.updateScreen();
     }
     
     public boolean debug()

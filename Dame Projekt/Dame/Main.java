@@ -68,6 +68,15 @@ public class Main
         bPieces.kill(position);
     }
     
+    public static void killWhitePiece(int[] position) {
+        System.out.println("killWhitePiece wird gecalled");
+        wPieces.kill(position);
+    }
+    
+    public static void returnSyntax() {
+        System.out.println("Das ist die Syntax von schwarz " + bPieces.pieces[0].syntax);
+    }
+    
     public static void updatePiecePositions() {
         for (int i = 0; i < Stein.piecePositions.length; i++) {
             for (int j = 0; j < Stein.piecePositions.length; j++) {

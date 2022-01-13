@@ -75,7 +75,7 @@ public class Piece extends Stein
                  
             case 2:
                  if(Stein.piecePositions[gridPos[0] + 1][gridPos[1] - 1] == 1) {
-                     if (Stein.piecePositions[gridPos[0] + 2][gridPos[1] + 2] == 0) {
+                     if (Stein.piecePositions[gridPos[0] + 2][gridPos[1] - 2] == 0) {
                          System.out.println(color + " " + syntax);
                          System.out.println(gridPos[0] + " Links! " + gridPos[1]);
                          return true;
