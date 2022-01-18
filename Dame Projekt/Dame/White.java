@@ -20,7 +20,7 @@ public class White extends Sides {
     
     public void moveWhite(int pieceNum, int direction) {
         
-        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField(new int[]{}))
+        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField())
         {
             System.out.println(String.valueOf(pieces[pieceNum].checkKill()) + " <---------- ist checkKill richtif???");
             pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] + 1});
@@ -53,15 +53,15 @@ public class White extends Sides {
     }
     
     public Shape gibAktuelleFigur()
-    {
-        
+    {        
         piecesShape.reset();
         for(Piece piece : pieces)
         {
             piece.resetNewPiece();
-            piecesShape.append(piece.gibAktuelleFigur(), false);
+            if (!piece.isDead) {
+                piecesShape.append(piece.gibAktuelleFigur(), false);
+            }
         }
-        
         return transform(piecesShape);
     }
 }

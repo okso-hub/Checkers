@@ -98,8 +98,52 @@ public class Piece extends Stein
         return false;
    }
         
-   protected boolean checkField(int[] position)
+   protected boolean checkField()
    {
+       switch (syntax) {
+           
+           case 1:
+                
+                 if(Stein.piecePositions[gridPos[0] + 1][gridPos[1] + 1] != 0) {
+                     if (Stein.piecePositions[gridPos[0] + 2][gridPos[1] + 2] != 0) {
+                         return true;
+                     }
+                 } else if(Stein.piecePositions[gridPos[0] - 1][gridPos[1] + 1] != 0) {
+                     if (Stein.piecePositions[gridPos[0] - 2][gridPos[1] + 2] != 0) {
+                         return true;
+                     }
+                 } else if (Stein.piecePositions[gridPos[0] + 1][gridPos[1] + 1] == 1) {
+                     return true;
+                 } else if (Stein.piecePositions[gridPos[0] - 1][gridPos[1] + 1] == 1) {
+                     return true;
+                 } else {
+                     return false;
+                 }
+                 
+                 break;
+           
+           case 2:
+                 if(Stein.piecePositions[gridPos[0] + 1][gridPos[1] - 1] != 0) {
+                     if (Stein.piecePositions[gridPos[0] + 2][gridPos[1] - 2] != 0) {
+                         return true;
+                     }
+                 } else if(Stein.piecePositions[gridPos[0] - 1][gridPos[1] - 1] != 0) {
+                     if (Stein.piecePositions[gridPos[0] - 2][gridPos[1] - 2] != 0) {
+                         return true;
+                     }
+                 } else if (Stein.piecePositions[gridPos[0] + 1][gridPos[1] - 1] == 2) {
+                     return true;
+                 } else if (Stein.piecePositions[gridPos[0] - 1][gridPos[1] - 1] == 2) {
+                     return true;
+                 } else {
+                     return false;
+                 }
+                 
+                 break;
+           default:
+                System.out.println("Piece syntax error");
+           
+       }
        return false;
    }
    

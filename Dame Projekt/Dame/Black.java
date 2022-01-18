@@ -26,7 +26,7 @@ public class Black extends Sides {
         
         /* ------------------------------------------------- */
         
-        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField(new int[]{}))
+        if(!pieces[pieceNum].checkKill() && !pieces[pieceNum].checkField())
         {
             System.out.println(String.valueOf(pieces[pieceNum].checkKill()) + " <---------- ist checkKill richtif???");
             pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] - 1});
@@ -48,11 +48,14 @@ public class Black extends Sides {
                 Main.killWhitePiece(new int[]{pieces[pieceNum].gridPos[0] + 1, pieces[pieceNum].gridPos[1] - 1});
                 Main.updatePiecePositions();
                 System.out.println("Töten nach rechts oben");
+                
+                pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] - 2});
+                Main.updatePiecePositions();
             }
         }
         Main.updateScreen();
     }
-      
+     
     public Shape gibAktuelleFigur()
     {
         piecesShape.reset();
