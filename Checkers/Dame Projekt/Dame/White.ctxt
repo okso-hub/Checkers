@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=White
-comment1.params=
-comment1.target=White()
-comment2.params=pieceNum\ direction
-comment2.target=void\ moveWhite(int,\ int)
-comment3.params=
-comment3.target=java.awt.Shape\ gibAktuelleFigur()
-numComments=4
