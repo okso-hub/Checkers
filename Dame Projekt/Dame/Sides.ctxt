@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Sides
+comment1.params=
+comment1.target=void\ positionWhitePieces()
+comment2.params=
+comment2.target=void\ positionBlackPieces()
+comment3.params=
+comment3.target=int[][]\ getPiecePosition()
+comment4.params=position
+comment4.target=void\ kill(int[])
+numComments=5
