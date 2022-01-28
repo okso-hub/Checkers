@@ -44,7 +44,6 @@ public class Black extends Sides {
                         
                         pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] - 2});
                         Main.updatePiecePositions();
-                        
                     } 
                     break;
                 case 1:
