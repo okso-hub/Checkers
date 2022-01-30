@@ -38,22 +38,17 @@ public abstract class Sides extends Stein
                 pieces[p].resetNewPiece();
                 p++;
             }
-            
-            // if(right){pieces[p].gridPos[0]++;}
             right = (right == 0) ? 1 : 0;
         }
     }
     
-    protected int[][] getPiecePosition()
-    {
+    protected int[][] getPiecePosition() {
         int[][] posses = new int[8][8];
         
         for (int i = 0; i < posses.length; i++) {
             for(Piece piece : pieces) {
                 if (piece.gridPos[0] == i) { 
-                    // System.out.println("Is dead? --> " + isDead);
-                    if(!piece.isDead)
-                    {
+                    if(!piece.isDead) {
                        posses[piece.gridPos[0]][piece.gridPos[1]] = (color == "blau") ? 1 : 2; 
                     }               
                 }

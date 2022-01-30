@@ -4,22 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner; 
 import java.io.FileNotFoundException;
+import javax.swing.JFrame;
 
 public class Main 
 {
     public static White wPieces;
     public static Black bPieces;
     public static Field field;
-    
-    public static void test() {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Choose saved game");
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-          File file = fileChooser.getSelectedFile();
-          // load from file
-        }
-    }
     
     public static String returnGame() {
         String game = "";
@@ -34,11 +25,11 @@ public class Main
             game += piece.isDead ? "1" : "0";
             // game += isDame;
             game += piece.syntax;
-            // game += " | ";
             index++;
         }
-        // game += " ||| ";
+        
         index = 0;
+        
         for (Piece piece: bPieces.pieces) {
             if (index < 10) {
                 game += "0";
@@ -49,21 +40,27 @@ public class Main
             game += piece.isDead ? "1" : "0";
             // game += isDame;
             game += piece.syntax;
-            // game += " | ";
             index++;
         }
         return game;
     }
     
     public static void saveGame() {
+        JFrame frame = new JFrame();
         File dir;
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         fileChooser.setDialogTitle("Choose directory for saving the game");
-        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+        
+        int showSaveDialog = fileChooser.showSaveDialog(frame);
+        System.out.println("Ganz oben in der Methode");
+        
+        if (showSaveDialog == JFileChooser.APPROVE_OPTION) {
           dir = fileChooser.getSelectedFile();
           File file = new File(dir, "game_content.txt");
+          System.out.println("Im if");
           try {
+              System.out.println("Im try");
               FileWriter fw = new FileWriter(file);
               fw.write(returnGame());
               fw.close();
@@ -125,8 +122,7 @@ public class Main
     }
     
     
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
     
         wPieces = new White();
         bPieces = new Black();
@@ -143,34 +139,40 @@ public class Main
         updatePiecePositions();
     }
     
-    public static void moveWhite(int num, int direction) {
-        wPieces.moveWhite(num, direction);
+    public static void moveWhite(int pieceNum, int direction) {
+        wPieces.moveWhite(pieceNum, direction);
+        updatePiecePositions();
+        checkDame();
+        updateScreen();
     }
     
-//     public static boolean debug()
-//     {
-//          return wPieces.debug();
-//     }
-//     
-    public static void moveBlack(int num, int direction) {
-        bPieces.moveBlack(num, direction);
+    public static void moveBlack(int pieceNum, int direction) {
+        bPieces.moveBlack(pieceNum, direction);
+        updatePiecePositions();
+        checkDame();
+        updateScreen();
     }
     
-    public static void updateArrayPosition() {
-        // leer
+    public static void moveWhiteDame(int pieceNum, int xDirection, int yDirection, int steps) {
+        wPieces.moveDame(pieceNum, xDirection, yDirection, steps);
+        updatePiecePositions();
+        checkDame();
+        updateScreen();
+    }
+    
+    public static void moveBlackDame(int pieceNum, int xDirection, int yDirection, int steps) {
+        bPieces.moveDame(pieceNum, xDirection, yDirection, steps);
+        updatePiecePositions();
+        checkDame();
+        updateScreen();
     }
     
     public static void updateScreen() {
         bPieces.loesche();
-        bPieces.zeichne();
-        
         wPieces.loesche();
+        
+        bPieces.zeichne();
         wPieces.zeichne();
-    }
-    
-    public static void killOne()
-    {
-// //         bPieces.kill(new int[]^^^^^^^^^^^^^^^^^^^^)
     }
     
     public static void returnDead() {
@@ -178,23 +180,31 @@ public class Main
     }
     
     public static void killBlackPiece(int[] position) {
-        System.out.println("killBlackPiece wird gecalled");
         bPieces.kill(position);
     }
     
     public static void killWhitePiece(int[] position) {
-        System.out.println("killWhitePiece wird gecalled");
         wPieces.kill(position);
-    }
-    
-    public static void returnSyntax() {
-        System.out.println("Das ist die Syntax von schwarz " + bPieces.pieces[0].syntax);
     }
     
     public static void updatePiecePositions() {
         for (int i = 0; i < Stein.piecePositions.length; i++) {
             for (int j = 0; j < Stein.piecePositions.length; j++) {
                 Stein.piecePositions[i][j] = bPieces.getPiecePosition()[i][j] + wPieces.getPiecePosition()[i][j];
+            }
+        }
+    }
+    
+    public static void checkDame() {
+        for (Piece piece: wPieces.pieces) {
+            if (piece.checkDame()) {
+                piece.turnDame();
+            }
+        }
+        
+        for (Piece piece: bPieces.pieces) {
+            if (piece.checkDame()) {
+                piece.turnDame();
             }
         }
     }

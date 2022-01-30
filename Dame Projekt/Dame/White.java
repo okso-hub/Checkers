@@ -20,48 +20,39 @@ public class White extends Sides {
     
     public void moveWhite(int pieceNum, int direction) {
         
-        if(!pieces[pieceNum].checkKill(direction) && !pieces[pieceNum].checkField(direction))
-        {
-            System.out.println(String.valueOf(pieces[pieceNum].checkKill(direction)) + " <---------- ist checkKill richtif???");
+        if(!pieces[pieceNum].checkKill(direction) && !pieces[pieceNum].checkField(direction)) {
+            
             pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction, pieces[pieceNum].gridPos[1] + 1});
-            Main.updatePiecePositions();
-        } 
-         else if(pieces[pieceNum].checkKill(direction))
-        {
-            Main.updatePiecePositions();
+            
+        } else if(pieces[pieceNum].checkKill(direction)) {
             
             switch (direction) {
                 case -1:
                     if (Stein.piecePositions[pieces[pieceNum].gridPos[0] - 1][pieces[pieceNum].gridPos[1] + 1] == 2) {
                         Main.killBlackPiece(new int[]{pieces[pieceNum].gridPos[0] - 1, pieces[pieceNum].gridPos[1] + 1});
-                        Main.updatePiecePositions();
-                        System.out.println("Töten nach links unten");
                         
                         pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] + 2});
-                        Main.updatePiecePositions();
                         
                     } 
                     break;
                 case 1:
                     if (Stein.piecePositions[pieces[pieceNum].gridPos[0] + 1][pieces[pieceNum].gridPos[1] + 1] == 2) {
                         Main.killBlackPiece(new int[]{pieces[pieceNum].gridPos[0] + 1, pieces[pieceNum].gridPos[1] + 1});
-                        Main.updatePiecePositions();
-                        System.out.println("Töten nach rechts unten");
                         
                         pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] + 2});
-                        Main.updatePiecePositions();
                     }
                     break;
             }
         }
-        Main.updateScreen();
     }
     
-    public Shape gibAktuelleFigur()
-    {        
+    public void moveDame(int num, int x, int y, int steps) {
+        pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
+    }
+    
+    public Shape gibAktuelleFigur() {        
         piecesShape.reset();
-        for(Piece piece : pieces)
-        {
+        for(Piece piece : pieces) {
             piece.resetNewPiece();
             if (!piece.isDead) {
                 piecesShape.append(piece.gibAktuelleFigur(), false);

@@ -40,16 +40,6 @@ public abstract class Stein
         Main.updateScreen();
     }
     
-    protected void turnQueen()
-    {
-        // !!!
-    }
-    
-    protected void kill()
-    {
-        // leer
-    }
-    
     public static int[][] returnPiecePositions()
     {
         return piecePositions;
@@ -82,7 +72,7 @@ public abstract class Stein
         loesche(); // "tue nichts" wird in loesche() abgefangen.
         istSichtbar = false;
     }
-   
+       
     /**
      * Aendere die color dieses Objektes in 'neuecolor'.
      * Gueltige Angaben sind "rot", "gelb", "blau", "gruen",

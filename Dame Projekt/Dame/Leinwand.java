@@ -62,7 +62,7 @@ public class Leinwand
 
   //  ----- Exemplarvariablen -----
 
-  private JFrame fenster;
+  public JFrame fenster;
   private Zeichenflaeche zeichenflaeche;
   private Graphics2D graphic;
   private Color hintergrundfarbe;

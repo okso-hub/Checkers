@@ -1,20 +1,16 @@
+import java.awt.geom.GeneralPath;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Arc2D;
 
-/**
- * Ein Piece, der manipuliert werden kann und sich selbst auf einer Leinwand zeichnet.
- * 
- * @author Claus Albowski
- * @version 2.2  (aug 07)
- */
 public class Piece extends Stein 
 {   
     
     protected int diameter;
     protected int syntax;
+    protected boolean isDame;
     
     /**
      * Erzeuge einen neuen Stuhl mit einer Standardcolor und Standardgroesse
@@ -25,6 +21,7 @@ public class Piece extends Stein
         pos[1] = 10;
         color = (isWhite) ? "blau" : "schwarz";
         syntax = (isWhite) ? 1 : 2;
+        isDame = false;
         istSichtbar = false;
         diameter = 40;
     }
@@ -178,14 +175,38 @@ public class Piece extends Stein
        return false;
    }
    
-    /**
-     * Berechnet das zu zeichnende Shape anhand der gegebenen Daten
-     * [ Zum Anzeigen der Attributwerte über Inspect muss hier die Sichtbarkeit 
-     *  auf public gesetzt werden. ]
-     */
-    protected Shape gibAktuelleFigur()
-    {
-        return transform(new Arc2D.Double(0, 0, diameter, diameter, 0 , 360, Arc2D.OPEN));
-    }
+   protected boolean checkDame() {
+       switch(syntax) {
+           case 1:
+               if (gridPos[1] == 7) {
+                   return true;
+               }
+               break;
+           case 2:
+               if (gridPos[1] == 0) {
+                   return true;
+               }
+               break;
+       }
+       return false;
+   }
+   
+   protected void turnDame() {
+       isDame = true;
+   }
+    
+   protected Shape gibAktuelleFigur() {
+       GeneralPath figur = new GeneralPath();
+       
+       Arc2D kreis = new Arc2D.Double(0, 0, diameter, diameter, 0 , 360, Arc2D.OPEN);
+       Arc2D kleinerKreis = new Arc2D.Double(0, 0, diameter / 2, diameter / 2, 0, 360, Arc2D.OPEN);
+       
+       figur.append(kreis, false);
+       if (isDame) {
+           figur.append(kleinerKreis, false);
+       }
+       
+       return transform(figur);
+   }
 
 }
