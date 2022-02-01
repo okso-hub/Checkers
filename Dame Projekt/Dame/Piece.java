@@ -191,6 +191,53 @@ public class Piece extends Stein
        return false;
    }
    
+   protected boolean checkFieldDame(int x, int y, int steps) {
+       int current;
+       for (int i = 1; i <= steps; i++) {
+           try {
+               current = Stein.piecePositions[gridPos[0] + (i * x)][gridPos[1] + (i * y)]; 
+               if (current == syntax) {
+                   return false;
+               }
+           } catch(Exception e) {
+               return false;
+           }
+       }
+       return true;
+   }
+   
+   protected int checkKillDame(int x, int y, int steps) {
+       // 0 -> Feld frei (keine Gegner)
+       // 1 -> einer oder mehr Gegner, die getötet werden können
+       // 2 -> Gegner stehen hintereinander (kann nicht getötet werden)
+       int result = 0;
+       boolean foundEnemy = false;
+       int current;
+       for (int i = 1; i <= steps; i++) {
+           try {
+               current = Stein.piecePositions[gridPos[0] + (i * x)][gridPos[1] + (i * y)];
+               if (current != syntax && current != 0) {
+                   int next = Stein.piecePositions[gridPos[0] + (i * x) + x][gridPos[1] + (i * y) + y];
+                   switch (next) {
+                       case 0:
+                            foundEnemy = true;
+                       default:
+                            result = 2;
+                            foundEnemy = false;
+                            break;
+                   } 
+               } 
+           } catch(Exception e) {
+               result = 2;
+               foundEnemy = false;
+           }
+       }
+       if (foundEnemy) {
+           return 1;
+       } 
+       return result;
+   }
+   
    protected void turnDame() {
        isDame = true;
    }

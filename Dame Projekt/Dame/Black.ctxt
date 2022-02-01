@@ -1,11 +1,10 @@
 #BlueJ class context
-comment0.target=Black
-comment1.params=
-comment1.target=Black()
-comment2.params=pieceNum\ direction
-comment2.target=void\ moveBlack(int,\ int)
-comment3.params=a\ b\ c\ d
-comment3.target=void\ moveDame(int,\ int,\ int,\ int)
-comment4.params=
-comment4.target=java.awt.Shape\ gibAktuelleFigur()
-numComments=5
+comment0.params=
+comment0.target=Black()
+comment1.params=pieceNum\ direction
+comment1.target=void\ moveBlack(int,\ int)
+comment2.params=a\ b\ c\ d
+comment2.target=void\ moveDame(int,\ int,\ int,\ int)
+comment3.params=
+comment3.target=java.awt.Shape\ gibAktuelleFigur()
+numComments=4

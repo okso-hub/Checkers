@@ -187,6 +187,11 @@ public class Main
         wPieces.kill(position);
     }
     
+    public static boolean debug2 (int x, int y, int steps)
+    {
+        return wPieces.pieces[11].checkFieldDame(x, y, steps);
+    }
+    
     public static void updatePiecePositions() {
         for (int i = 0; i < Stein.piecePositions.length; i++) {
             for (int j = 0; j < Stein.piecePositions.length; j++) {

@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Field
-comment0.text=\n\ Ein\ Piece,\ der\ manipuliert\ werden\ kann\ und\ sich\ selbst\ auf\ einer\ Leinwand\ zeichnet.\n\ \n\ @author\ Claus\ Albowski\n\ @version\ 2.2\ \ (aug\ 07)\n
+comment0.params=
+comment0.target=Field()
+comment0.text=\r\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\r\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\r\n
 comment1.params=
-comment1.target=Field()
-comment1.text=\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\n
-comment2.params=
-comment2.target=java.awt.Shape\ gibAktuelleFigur()
-comment2.text=\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ \u00FCber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \n\ \ auf\ public\ gesetzt\ werden.\ ]\n
-numComments=3
+comment1.target=java.awt.Shape\ gibAktuelleFigur()
+comment1.text=\r\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\r\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ \u00FCber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \r\n\ \ auf\ public\ gesetzt\ werden.\ ]\r\n
+numComments=2
