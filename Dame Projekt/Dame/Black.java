@@ -45,7 +45,28 @@ public class Black extends Sides {
     public void moveDame(int a, int b, int c, int d) {
         // leer
     }
-     
+    
+    public void killOnLine(int gridX, int gridY, int x, int y, int steps) {
+        int distance;
+        if (gridX > x) {
+            distance = gridX - x;
+        } else {
+            distance = x - gridX;
+        }
+        
+        System.out.println("gridX: " + gridX + ", x: " + x + ", distance: " + distance);
+        
+        for (int i = 1; i < distance; i++) {
+            for (Piece piece : pieces) {
+                
+                System.out.println("Piece Position check: " + " x was geprüft wird: " + piece.gridPos[0] + (gridX + i) + " y was gerpüft wird: " + piece.gridPos[1] + " " + (gridY - i));
+                if (piece.gridPos[0] == (gridX + i) && piece.gridPos[1] == gridY - i) {
+                    piece.die();
+                }
+            }
+        }
+    }
+    
     public Shape gibAktuelleFigur()
     {
         piecesShape.reset();

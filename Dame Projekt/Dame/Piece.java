@@ -197,12 +197,15 @@ public class Piece extends Stein
            try {
                current = Stein.piecePositions[gridPos[0] + (i * x)][gridPos[1] + (i * y)]; 
                if (current == syntax) {
+                   System.out.println("Ein Mitspieler ist im Weg!");
                    return false;
                }
            } catch(Exception e) {
+               System.out.println("ArrayIndexOutOfBoundsssss");
                return false;
            }
        }
+       System.out.println("Success!!! True");
        return true;
    }
    
@@ -218,9 +221,11 @@ public class Piece extends Stein
                current = Stein.piecePositions[gridPos[0] + (i * x)][gridPos[1] + (i * y)];
                if (current != syntax && current != 0) {
                    int next = Stein.piecePositions[gridPos[0] + (i * x) + x][gridPos[1] + (i * y) + y];
+                   System.out.println("Next: " + next + ", Current: " + current);
                    switch (next) {
                        case 0:
                             foundEnemy = true;
+                            break;
                        default:
                             result = 2;
                             foundEnemy = false;

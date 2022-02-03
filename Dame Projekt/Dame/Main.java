@@ -187,6 +187,10 @@ public class Main
         wPieces.kill(position);
     }
     
+    public static void killOnLine(int gridX, int gridY, int x, int y, int steps) {
+        bPieces.killOnLine(gridX, gridY, x, y, steps);
+    }
+    
     public static boolean debug2 (int x, int y, int steps)
     {
         return wPieces.pieces[11].checkFieldDame(x, y, steps);

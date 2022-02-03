@@ -48,13 +48,17 @@ public class White extends Sides {
     
     public void moveDame(int num, int x, int y, int steps) {
         if (pieces[num].checkFieldDame(x, y, steps)) {
+            System.out.println("checkKillDame Parameter: " + pieces[num].checkKillDame(x, y, steps));
             switch(pieces[num].checkKillDame(x, y, steps)) {
                 case 0:
                     pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
                     break;
                 case 1:
+                    int gridX = pieces[num].gridPos[0];
+                    int gridY = pieces[num].gridPos[1];
+                    
                     pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
-                    // kill mit der Dame
+                    Main.killOnLine(gridX, gridY, (x * steps) + gridX, (y * steps) + gridY, steps);
                     break;
                 case 2:
                     break;
