@@ -50,7 +50,7 @@ public abstract class Sides extends Stein
                 if (piece.gridPos[0] == i) { 
                     if(!piece.isDead) {
                        posses[piece.gridPos[0]][piece.gridPos[1]] = (color == "blau") ? 1 : 2;
-                       System.out.println("Pos: " + piece.gridPos[0] + " " + piece.gridPos[1]);
+                       // System.out.println("Pos: " + piece.gridPos[0] + " " + piece.gridPos[1]);
                     }               
                 }
             }
@@ -62,9 +62,9 @@ public abstract class Sides extends Stein
     protected void kill(int[] position) {
         System.out.println("Methode wird ausgefuehrt");
         for (Piece piece : pieces) {
-            System.out.println(piece.gridPos[0] + " " + piece.gridPos[1]);
-            System.out.println(position[0] + " " + position[1]);
-            System.out.println("---------------------------");
+            // System.out.println(piece.gridPos[0] + " " + piece.gridPos[1]);
+            // System.out.println(position[0] + " " + position[1]);
+            // System.out.println("---------------------------");
             if (piece.gridPos[0] == position[0] && piece.gridPos[1] == position[1]) {
                 piece.die();
                 System.out.println("Figur isDead");

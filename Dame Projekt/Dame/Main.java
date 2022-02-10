@@ -58,9 +58,7 @@ public class Main
         if (showSaveDialog == JFileChooser.APPROVE_OPTION) {
           dir = fileChooser.getSelectedFile();
           File file = new File(dir, "game_content.txt");
-          System.out.println("Im if");
           try {
-              System.out.println("Im try");
               FileWriter fw = new FileWriter(file);
               fw.write(returnGame());
               fw.close();
@@ -81,7 +79,7 @@ public class Main
           try {
               Scanner scanner = new Scanner(file);
               game = scanner.nextLine();
-              System.out.println("Pieces length: " + wPieces.pieces.length);
+              // System.out.println("Pieces length: " + wPieces.pieces.length);
               char[] gameInfo = game.toCharArray();
               for (int i = 0; i < (wPieces.pieces.length * 2); i++) {
                   // System.out.println("i: " + i);
@@ -89,8 +87,8 @@ public class Main
                   int currPiece = Integer.parseInt(String.valueOf(new char[] {gameInfo[i * 6], gameInfo[i * 6 + 1]}));
                   // System.out.println("currPiece: " + currPiece);
                   if (gameInfo[i * 6 + 5] == '1') {
-                      System.out.println("Game info: " + gameInfo[i * 6 + 2]);
-                      System.out.println("Game info: " + gameInfo[i * 6 + 3]);
+                      // System.out.println("Game info: " + gameInfo[i * 6 + 2]);
+                      // System.out.println("Game info: " + gameInfo[i * 6 + 3]);
                       wPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 6 + 2] - '0';
                       wPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 6 + 3] - '0';
                       wPieces.pieces[currPiece].isDead = (gameInfo[i * 6 + 4]) == '1' ? true : false;
@@ -100,8 +98,8 @@ public class Main
                   }
                   
                   if (gameInfo[i * 6 + 5] == '2') {
-                      System.out.println("Game info: " + gameInfo[i * 6 + 2]);
-                      System.out.println("Game info: " + gameInfo[i * 6 + 3]);
+                      // System.out.println("Game info: " + gameInfo[i * 6 + 2]);
+                      // System.out.println("Game info: " + gameInfo[i * 6 + 3]);
                       bPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 6 + 2] - '0';
                       bPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 6 + 3] - '0';
                       bPieces.pieces[currPiece].isDead = (gameInfo[i * 6 + 4]) == '1' ? true : false;

@@ -28,8 +28,6 @@ public class Piece extends Stein
     
     protected void movePiece(int[] newPos) {
         loesche();
-        System.out.println(newPos[0] + "PERFecto");
-        System.out.println(newPos[1] + "perfextro");
         gridPos[0] = newPos[0];
         gridPos[1] = newPos[1];
         

@@ -54,13 +54,14 @@ public class Black extends Sides {
             distance = x - gridX;
         }
         
-        System.out.println("gridX: " + gridX + ", x: " + x + ", distance: " + distance);
+        // System.out.println("gridX: " + gridX + ", x: " + x + ", distance: " + distance);
         
         for (int i = 1; i < distance; i++) {
             for (Piece piece : pieces) {
-                
-                System.out.println("Piece Position check: " + " x was geprüft wird: " + piece.gridPos[0] + (gridX + i) + " y was gerpüft wird: " + piece.gridPos[1] + " " + (gridY - i));
-                if (piece.gridPos[0] == (gridX + i) && piece.gridPos[1] == gridY - i) {
+                System.out.println(gridX + i*x);
+                System.out.println(gridY + i*y);
+                // System.out.println("Piece Position check: " + " x was geprüft wird: " + piece.gridPos[0] + (gridX + i) + " y was gerpüft wird: " + piece.gridPos[1] + " " + (gridY - i));
+                if (piece.gridPos[0] == (gridX + i*x) && piece.gridPos[1] == gridY + i*y) {
                     piece.die();
                 }
             }
