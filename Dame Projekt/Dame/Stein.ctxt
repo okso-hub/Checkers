@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=isLeft
-comment0.target=void\ move(boolean)
+comment0.target=Stein
+comment0.text=\n\ Abstrakte\ Klasse\ Stein\ -\ beschreiben\ Sie\ hier\ die\ Klasse\n\ \n\ @author\ Hey\!\ \:)\n\ @version\ (eine\ Version-Nummer\ oder\ ein\ Datum)\n
 comment1.params=
 comment1.target=void\ die()
 comment10.params=shape
@@ -15,14 +15,14 @@ comment5.params=
 comment5.target=void\ zeige()
 comment6.params=
 comment6.target=void\ verberge()
-comment6.text=\r\n\ Mache\ dieses\ Objekt\ unsichtbar.\ Wenn\ es\ bereits\ unsichtbar\ ist,\ tue\ nichts.\r\n
+comment6.text=\n\ Mache\ dieses\ Objekt\ unsichtbar.\ Wenn\ es\ bereits\ unsichtbar\ ist,\ tue\ nichts.\n
 comment7.params=neuecolor
 comment7.target=void\ aenderecolor(java.lang.String)
-comment7.text=\r\n\ Aendere\ die\ color\ dieses\ Objektes\ in\ 'neuecolor'.\r\n\ Gueltige\ Angaben\ sind\ "rot",\ "gelb",\ "blau",\ "gruen",\r\n\ "lila"\ und\ "schwarz".\r\n
+comment7.text=\n\ Aendere\ die\ color\ dieses\ Objektes\ in\ 'neuecolor'.\n\ Gueltige\ Angaben\ sind\ "rot",\ "gelb",\ "blau",\ "gruen",\n\ "lila"\ und\ "schwarz".\n
 comment8.params=
 comment8.target=void\ zeichne()
-comment8.text=\r\n\ Zeichne\ dieses\ Objekt\ mit\ seinen\ aktuellen\ Werten\ auf\ den\ Bildschirm.\r\n
+comment8.text=\n\ Zeichne\ dieses\ Objekt\ mit\ seinen\ aktuellen\ Werten\ auf\ den\ Bildschirm.\n
 comment9.params=
 comment9.target=void\ loesche()
-comment9.text=\r\n\ Loesche\ dieses\ Objekt\ vom\ Bildschirm.\r\n
+comment9.text=\n\ Loesche\ dieses\ Objekt\ vom\ Bildschirm.\n
 numComments=11

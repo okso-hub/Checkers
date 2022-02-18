@@ -72,4 +72,30 @@ public abstract class Sides extends Stein
             }
         }
     }   
+    
+    protected void killOnLine(int gridX, int gridY, int x, int y, int steps, int syntax) {
+        int curr_posX = gridX > x ? -1 : 1;
+        int curr_posY = gridY > y ? -1 : 1;
+        int distance;
+        if (gridX > x) {
+            distance = gridX - x;
+        } else {
+            distance = x - gridX;
+        }
+        
+        // System.out.println("gridX: " + gridX + ", x: " + x + ", distance: " + distance);
+        
+        for (int i = 1; i < distance; i++) {
+            for (Piece piece : pieces) {
+                // System.out.println(gridX + i*x);
+                // System.out.println(gridY + i*y);
+                // System.out.println("Piece Position check: " + " x was geprüft wird: " + piece.gridPos[0] + (gridX + i) + " y was gerpüft wird: " + piece.gridPos[1] + " " + (gridY - i));
+                System.out.println(pieces[3].gridPos[0] + " " + (gridX + i*x));
+                if (piece.gridPos[0] == (gridX + i*curr_posX) && piece.gridPos[1] == gridY + i*curr_posY) { 
+                    piece.die();
+                    System.out.println("piece.die()");
+                }
+            }
+        }
+    }
 }

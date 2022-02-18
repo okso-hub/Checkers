@@ -23,11 +23,12 @@ public class Main
             game += piece.gridPos[0];
             game += piece.gridPos[1];
             game += piece.isDead ? "1" : "0";
-            // game += isDame;
+            game += piece.isDame ? "1" : "0";
             game += piece.syntax;
+            // game += " ";
             index++;
         }
-        
+        // game += " || ";
         index = 0;
         
         for (Piece piece: bPieces.pieces) {
@@ -38,8 +39,9 @@ public class Main
             game += piece.gridPos[0];
             game += piece.gridPos[1];
             game += piece.isDead ? "1" : "0";
-            // game += isDame;
+            game += piece.isDame ? "1" : "0";
             game += piece.syntax;
+            // game += " ";
             index++;
         }
         return game;
@@ -53,7 +55,6 @@ public class Main
         fileChooser.setDialogTitle("Choose directory for saving the game");
         
         int showSaveDialog = fileChooser.showSaveDialog(frame);
-        System.out.println("Ganz oben in der Methode");
         
         if (showSaveDialog == JFileChooser.APPROVE_OPTION) {
           dir = fileChooser.getSelectedFile();
@@ -79,31 +80,23 @@ public class Main
           try {
               Scanner scanner = new Scanner(file);
               game = scanner.nextLine();
-              // System.out.println("Pieces length: " + wPieces.pieces.length);
               char[] gameInfo = game.toCharArray();
               for (int i = 0; i < (wPieces.pieces.length * 2); i++) {
-                  // System.out.println("i: " + i);
-                  // System.out.println("gameInfo[i]: " + gameInfo[i] + " gameInfo[i * 6 + 5]: " + gameInfo[i * 6 + 5]);
-                  int currPiece = Integer.parseInt(String.valueOf(new char[] {gameInfo[i * 6], gameInfo[i * 6 + 1]}));
-                  // System.out.println("currPiece: " + currPiece);
-                  if (gameInfo[i * 6 + 5] == '1') {
-                      // System.out.println("Game info: " + gameInfo[i * 6 + 2]);
-                      // System.out.println("Game info: " + gameInfo[i * 6 + 3]);
-                      wPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 6 + 2] - '0';
-                      wPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 6 + 3] - '0';
-                      wPieces.pieces[currPiece].isDead = (gameInfo[i * 6 + 4]) == '1' ? true : false;
-                      // System.out.println("White piece: " + i);
+                  int currPiece = Integer.parseInt(String.valueOf(new char[] {gameInfo[i * 7], gameInfo[i * 7 + 1]}));
+                  if (gameInfo[i * 7 + 6] == '1') {
+                      wPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 7 + 2] - '0';
+                      wPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 7 + 3] - '0';
+                      wPieces.pieces[currPiece].isDead = (gameInfo[i * 7 + 4]) == '1' ? true : false;
+                      wPieces.pieces[currPiece].isDame = (gameInfo[i * 7 + 5]) == '1' ? true : false;
                       updatePiecePositions();
                       updateScreen();
                   }
                   
-                  if (gameInfo[i * 6 + 5] == '2') {
-                      // System.out.println("Game info: " + gameInfo[i * 6 + 2]);
-                      // System.out.println("Game info: " + gameInfo[i * 6 + 3]);
-                      bPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 6 + 2] - '0';
-                      bPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 6 + 3] - '0';
-                      bPieces.pieces[currPiece].isDead = (gameInfo[i * 6 + 4]) == '1' ? true : false;
-                      // System.out.println("Black piece: " + i);
+                  if (gameInfo[i * 7 + 6] == '2') {
+                      bPieces.pieces[currPiece].gridPos[0] = gameInfo[i * 7 + 2] - '0';
+                      bPieces.pieces[currPiece].gridPos[1] = gameInfo[i * 7 + 3] - '0';
+                      bPieces.pieces[currPiece].isDead = (gameInfo[i * 7 + 4]) == '1' ? true : false;
+                      bPieces.pieces[currPiece].isDame = (gameInfo[i * 7 + 5]) == '1' ? true : false;
                       updatePiecePositions();
                       updateScreen();
                   }
@@ -185,13 +178,12 @@ public class Main
         wPieces.kill(position);
     }
     
-    public static void killOnLine(int gridX, int gridY, int x, int y, int steps) {
-        bPieces.killOnLine(gridX, gridY, x, y, steps);
-    }
-    
-    public static boolean debug2 (int x, int y, int steps)
-    {
-        return wPieces.pieces[11].checkFieldDame(x, y, steps);
+    public static void killOnLine(int gridX, int gridY, int x, int y, int steps, int syntax) {
+        if (syntax == 2) {
+            bPieces.killOnLine(gridX, gridY, x, y, steps, syntax);
+        } else {
+            wPieces.killOnLine(gridX, gridY, x, y, steps, syntax);
+        }
     }
     
     public static void updatePiecePositions() {

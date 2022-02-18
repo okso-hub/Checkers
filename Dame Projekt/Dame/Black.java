@@ -42,28 +42,22 @@ public class Black extends Sides {
         }
     }
     
-    public void moveDame(int a, int b, int c, int d) {
-        // leer
-    }
-    
-    public void killOnLine(int gridX, int gridY, int x, int y, int steps) {
-        int distance;
-        if (gridX > x) {
-            distance = gridX - x;
-        } else {
-            distance = x - gridX;
-        }
-        
-        // System.out.println("gridX: " + gridX + ", x: " + x + ", distance: " + distance);
-        
-        for (int i = 1; i < distance; i++) {
-            for (Piece piece : pieces) {
-                System.out.println(gridX + i*x);
-                System.out.println(gridY + i*y);
-                // System.out.println("Piece Position check: " + " x was geprüft wird: " + piece.gridPos[0] + (gridX + i) + " y was gerpüft wird: " + piece.gridPos[1] + " " + (gridY - i));
-                if (piece.gridPos[0] == (gridX + i*x) && piece.gridPos[1] == gridY + i*y) {
-                    piece.die();
-                }
+    public void moveDame(int num, int x, int y, int steps) {
+        if (pieces[num].checkFieldDame(x, y, steps)) {
+            // System.out.println("checkKillDame Parameter: " + pieces[num].checkKillDame(x, y, steps));
+            switch(pieces[num].checkKillDame(x, y, steps)) {
+                case 0:
+                    pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
+                    break;
+                case 1:
+                    int gridX = pieces[num].gridPos[0];
+                    int gridY = pieces[num].gridPos[1];
+                    
+                    pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
+                    Main.killOnLine(gridX, gridY, (x * steps) + gridX, (y * steps) + gridY, steps, 1);
+                    break;
+                case 2:
+                    break;
             }
         }
     }

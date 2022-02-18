@@ -41,7 +41,6 @@ public class White extends Sides {
                         
                         pieces[pieceNum].movePiece(new int[]{pieces[pieceNum].gridPos[0] + direction * 2, pieces[pieceNum].gridPos[1] + 2});
                     }
-                    break;
             }
         }
     }
@@ -58,13 +57,12 @@ public class White extends Sides {
                     int gridY = pieces[num].gridPos[1];
                     
                     pieces[num].movePiece(new int[] {pieces[num].gridPos[0] + (x * steps), pieces[num].gridPos[1] + (y * steps)});
-                    Main.killOnLine(gridX, gridY, (x * steps) + gridX, (y * steps) + gridY, steps);
+                    Main.killOnLine(gridX, gridY, (x * steps) + gridX, (y * steps) + gridY, steps, 2);
                     break;
                 case 2:
                     break;
             }
         }
-        
     }
     
     public Shape gibAktuelleFigur() {        

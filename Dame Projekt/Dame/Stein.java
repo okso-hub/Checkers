@@ -24,11 +24,6 @@ public abstract class Stein
     protected boolean[][] isFree = new boolean[8][8];
     public static int[][] piecePositions = new int[8][8];
     
-    protected void move(boolean isLeft)
-    {
-        // KOMMT NOCh!!
-    }
-    
     protected void die()
     {
         isDead = true;

@@ -1,10 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ positionWhitePieces()
+comment0.target=Sides
 comment1.params=
-comment1.target=void\ positionBlackPieces()
+comment1.target=void\ positionWhitePieces()
 comment2.params=
-comment2.target=int[][]\ getPiecePosition()
-comment3.params=position
-comment3.target=void\ kill(int[])
-numComments=4
+comment2.target=void\ positionBlackPieces()
+comment3.params=
+comment3.target=int[][]\ getPiecePosition()
+comment4.params=position
+comment4.target=void\ kill(int[])
+comment5.params=gridX\ gridY\ x\ y\ steps\ syntax
+comment5.target=void\ killOnLine(int,\ int,\ int,\ int,\ int,\ int)
+numComments=6
