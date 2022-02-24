@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Piece
+comment1.params=isWhite
+comment1.target=Piece(boolean)
+comment1.text=\r\n\ Erzeuge\ einen\ neuen\ Stuhl\ mit\ einer\ Standardcolor\ und\ Standardgroesse\r\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\r\n
+comment10.params=
+comment10.target=java.awt.Shape\ gibAktuelleFigur()
+comment2.params=newPos
+comment2.target=void\ movePiece(int[])
+comment3.params=
+comment3.target=void\ resetNewPiece()
+comment4.params=direction
+comment4.target=boolean\ checkKill(int)
+comment5.params=direction
+comment5.target=boolean\ checkField(int)
+comment6.params=
+comment6.target=boolean\ checkDame()
+comment7.params=x\ y\ steps
+comment7.target=boolean\ checkFieldDame(int,\ int,\ int)
+comment8.params=x\ y\ steps
+comment8.target=int\ checkKillDame(int,\ int,\ int)
+comment9.params=
+comment9.target=void\ turnDame()
+numComments=11

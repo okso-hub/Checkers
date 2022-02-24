@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=PlayGame
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ PlayGame.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=nummer\ richtung
+comment1.target=void\ bewegeWeiss(int,\ int)
+comment2.params=nummer\ richtung
+comment2.target=void\ bewegeSchwarz(int,\ int)
+comment3.params=steinNummer\ xRichtung\ yRichtung\ schritte
+comment3.target=void\ bewegeWeisseDame(int,\ int,\ int,\ int)
+comment4.params=steinNummer\ xRichtung\ yRichtung\ schritte
+comment4.target=void\ bewegeSchwarzeDame(int,\ int,\ int,\ int)
+comment5.params=
+comment5.target=void\ speichern()
+comment6.params=
+comment6.target=void\ laden()
+comment7.params=
+comment7.target=void\ spielStart()
+numComments=8

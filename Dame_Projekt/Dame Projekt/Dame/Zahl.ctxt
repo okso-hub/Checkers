@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Zahl
+comment1.params=pieceNum
+comment1.target=Zahl(int)
+comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Zahl\n
+comment2.params=num
+comment2.target=java.awt.Shape\ gibZahl(int)
+comment2.text=\n\ Ein\ Beispiel\ einer\ Methode\ -\ ersetzen\ Sie\ diesen\ Kommentar\ mit\ Ihrem\ eigenen\n\ \n\ @param\ \ y\ \ \ \ ein\ Beispielparameter\ f\u00FCr\ eine\ Methode\n\ @return\ \ \ \ \ \ \ \ die\ Summe\ aus\ x\ und\ y\n
+numComments=3

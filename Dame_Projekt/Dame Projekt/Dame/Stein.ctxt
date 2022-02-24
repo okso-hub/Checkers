@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Stein
+comment0.text=\r\n\ Abstrakte\ Klasse\ Stein\ -\ beschreiben\ Sie\ hier\ die\ Klasse\r\n\ \r\n\ @author\ Hey\!\ \:)\r\n\ @version\ (eine\ Version-Nummer\ oder\ ein\ Datum)\r\n
+comment1.params=
+comment1.target=void\ die()
+comment2.params=
+comment2.target=int[][]\ returnPiecePositions()
+comment3.params=
+comment3.target=boolean[][]\ updateBoolean()
+comment4.params=
+comment4.target=java.awt.Shape\ gibAktuelleFigur()
+comment5.params=
+comment5.target=void\ zeige()
+comment6.params=
+comment6.target=void\ verberge()
+comment6.text=\r\n\ Mache\ dieses\ Objekt\ unsichtbar.\ Wenn\ es\ bereits\ unsichtbar\ ist,\ tue\ nichts.\r\n
+comment7.params=
+comment7.target=void\ zeichne()
+comment7.text=\r\n\ Zeichne\ dieses\ Objekt\ mit\ seinen\ aktuellen\ Werten\ auf\ den\ Bildschirm.\r\n
+comment8.params=
+comment8.target=void\ loesche()
+comment8.text=\r\n\ Loesche\ dieses\ Objekt\ vom\ Bildschirm.\r\n
+comment9.params=shape
+comment9.target=java.awt.Shape\ transform(java.awt.Shape)
+numComments=10
